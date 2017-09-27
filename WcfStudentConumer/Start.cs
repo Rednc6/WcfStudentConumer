@@ -7,7 +7,7 @@ using WcfStudentConumer.WcfServiceReference;
 
 namespace WcfStudentConumer
 {
-    class Start
+    public class Start
     {
         public void starttahthingy()
         {
