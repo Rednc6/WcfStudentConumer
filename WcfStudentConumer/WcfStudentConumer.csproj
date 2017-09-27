@@ -51,6 +51,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Start.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -65,9 +66,6 @@
     </None>
     <None Include="Connected Services\WcfServiceReference\StudentService2.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WcfServiceReference\WcfStudentConumer.WcfServiceReference.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\WcfServiceReference\WcfStudentConumer.WcfServiceReference.Student.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>

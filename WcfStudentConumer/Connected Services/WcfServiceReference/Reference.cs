@@ -15,67 +15,6 @@ namespace WcfStudentConumer.WcfServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/WcfStudentService")]
-    [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
-            get {
-                return this.BoolValueField;
-            }
-            set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
-            get {
-                return this.StringValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Student", Namespace="http://schemas.datacontract.org/2004/07/WcfStudentService")]
     [System.SerializableAttribute()]
     public partial class Student : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -84,7 +23,19 @@ namespace WcfStudentConumer.WcfServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string _nameField;
+        private string _addressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string _cityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string _firstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string _lastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int _personIDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -97,14 +48,66 @@ namespace WcfStudentConumer.WcfServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string _name {
+        public string _address {
             get {
-                return this._nameField;
+                return this._addressField;
             }
             set {
-                if ((object.ReferenceEquals(this._nameField, value) != true)) {
-                    this._nameField = value;
-                    this.RaisePropertyChanged("_name");
+                if ((object.ReferenceEquals(this._addressField, value) != true)) {
+                    this._addressField = value;
+                    this.RaisePropertyChanged("_address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string _city {
+            get {
+                return this._cityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this._cityField, value) != true)) {
+                    this._cityField = value;
+                    this.RaisePropertyChanged("_city");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string _firstName {
+            get {
+                return this._firstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this._firstNameField, value) != true)) {
+                    this._firstNameField = value;
+                    this.RaisePropertyChanged("_firstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string _lastName {
+            get {
+                return this._lastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this._lastNameField, value) != true)) {
+                    this._lastNameField = value;
+                    this.RaisePropertyChanged("_lastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int _personID {
+            get {
+                return this._personIDField;
+            }
+            set {
+                if ((this._personIDField.Equals(value) != true)) {
+                    this._personIDField = value;
+                    this.RaisePropertyChanged("_personID");
                 }
             }
         }
@@ -123,23 +126,11 @@ namespace WcfStudentConumer.WcfServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WcfServiceReference.IStudentService")]
     public interface IStudentService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentService/GetData", ReplyAction="http://tempuri.org/IStudentService/GetDataResponse")]
-        string GetData(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentService/GetData", ReplyAction="http://tempuri.org/IStudentService/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IStudentService/GetDataUsingDataContractResponse")]
-        WcfStudentConumer.WcfServiceReference.CompositeType GetDataUsingDataContract(WcfStudentConumer.WcfServiceReference.CompositeType composite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IStudentService/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<WcfStudentConumer.WcfServiceReference.CompositeType> GetDataUsingDataContractAsync(WcfStudentConumer.WcfServiceReference.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentService/AddStudent", ReplyAction="http://tempuri.org/IStudentService/AddStudentResponse")]
+        WcfStudentConumer.WcfServiceReference.Student AddStudent(int id, string lastName, string firstName, string adress, string city);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentService/AddStudent", ReplyAction="http://tempuri.org/IStudentService/AddStudentResponse")]
-        WcfStudentConumer.WcfServiceReference.Student AddStudent(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentService/AddStudent", ReplyAction="http://tempuri.org/IStudentService/AddStudentResponse")]
-        System.Threading.Tasks.Task<WcfStudentConumer.WcfServiceReference.Student> AddStudentAsync(string name);
+        System.Threading.Tasks.Task<WcfStudentConumer.WcfServiceReference.Student> AddStudentAsync(int id, string lastName, string firstName, string adress, string city);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentService/FindStudent", ReplyAction="http://tempuri.org/IStudentService/FindStudentResponse")]
         string FindStudent(string name);
@@ -193,28 +184,12 @@ namespace WcfStudentConumer.WcfServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
+        public WcfStudentConumer.WcfServiceReference.Student AddStudent(int id, string lastName, string firstName, string adress, string city) {
+            return base.Channel.AddStudent(id, lastName, firstName, adress, city);
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
-        }
-        
-        public WcfStudentConumer.WcfServiceReference.CompositeType GetDataUsingDataContract(WcfStudentConumer.WcfServiceReference.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
-        }
-        
-        public System.Threading.Tasks.Task<WcfStudentConumer.WcfServiceReference.CompositeType> GetDataUsingDataContractAsync(WcfStudentConumer.WcfServiceReference.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
-        }
-        
-        public WcfStudentConumer.WcfServiceReference.Student AddStudent(string name) {
-            return base.Channel.AddStudent(name);
-        }
-        
-        public System.Threading.Tasks.Task<WcfStudentConumer.WcfServiceReference.Student> AddStudentAsync(string name) {
-            return base.Channel.AddStudentAsync(name);
+        public System.Threading.Tasks.Task<WcfStudentConumer.WcfServiceReference.Student> AddStudentAsync(int id, string lastName, string firstName, string adress, string city) {
+            return base.Channel.AddStudentAsync(id, lastName, firstName, adress, city);
         }
         
         public string FindStudent(string name) {

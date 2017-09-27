@@ -7,18 +7,6 @@
       <xsd:import schemaLocation="http://localhost:63256/StudentService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfStudentService" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IStudentService_GetData_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetData" />
-  </wsdl:message>
-  <wsdl:message name="IStudentService_GetData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
-  </wsdl:message>
-  <wsdl:message name="IStudentService_GetDataUsingDataContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
-  </wsdl:message>
-  <wsdl:message name="IStudentService_GetDataUsingDataContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
-  </wsdl:message>
   <wsdl:message name="IStudentService_AddStudent_InputMessage">
     <wsdl:part name="parameters" element="tns:AddStudent" />
   </wsdl:message>
@@ -50,14 +38,6 @@
     <wsdl:part name="parameters" element="tns:GetAllStudentsResponse" />
   </wsdl:message>
   <wsdl:portType name="IStudentService">
-    <wsdl:operation name="GetData">
-      <wsdl:input wsaw:Action="http://tempuri.org/IStudentService/GetData" message="tns:IStudentService_GetData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IStudentService/GetDataResponse" message="tns:IStudentService_GetData_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/IStudentService/GetDataUsingDataContract" message="tns:IStudentService_GetDataUsingDataContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IStudentService/GetDataUsingDataContractResponse" message="tns:IStudentService_GetDataUsingDataContract_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="AddStudent">
       <wsdl:input wsaw:Action="http://tempuri.org/IStudentService/AddStudent" message="tns:IStudentService_AddStudent_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IStudentService/AddStudentResponse" message="tns:IStudentService_AddStudent_OutputMessage" />
@@ -81,24 +61,6 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IStudentService" type="tns:IStudentService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetData">
-      <soap:operation soapAction="http://tempuri.org/IStudentService/GetData" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <soap:operation soapAction="http://tempuri.org/IStudentService/GetDataUsingDataContract" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="AddStudent">
       <soap:operation soapAction="http://tempuri.org/IStudentService/AddStudent" style="document" />
       <wsdl:input>
