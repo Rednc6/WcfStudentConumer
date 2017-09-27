@@ -27,7 +27,7 @@ namespace WcfStudentConumer.Tests
 
 
 
-            Assert.IsInstanceOfType(x, typeof(Student));
+            Assert.IsInstanceOfType(x, typeof(String));
         }
     }
 }
