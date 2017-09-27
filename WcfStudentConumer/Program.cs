@@ -13,7 +13,7 @@ namespace WcfStudentConumer
         {
             Start run = new Start();
 
-            run.starttahthingy();
+            run.starttahthingy()s;
             
         }
     } 
